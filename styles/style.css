@@ -286,6 +286,6 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .content__card-link:focus-visible {
-  outline: none;
   border: 1px solid #fff;
+  outline: none;
 }
