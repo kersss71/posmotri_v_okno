@@ -16,7 +16,7 @@ html {
   padding: 133px 30px;
   inline-size: 1200px;
   block-size: 100%;
-  /* height: 800px; */
+  /* height: 800px; */1
   height: 100%;
   margin: auto;
   color: #fff;
@@ -67,7 +67,6 @@ ol {
   align-items: center;
   inline-size: 1140px;
   gap: 30px;
-  /* margin: 133px 30px; */
 }
 
 .result {
@@ -90,7 +89,7 @@ ol {
   align-items: start;
   width: 100%;
   height: 298px;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
 }
 
@@ -101,6 +100,8 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  height: 100%;
 }
 
 .content__video-card {
@@ -112,6 +113,7 @@ ol {
   width: 194px;
   height: 103px;
   object-fit: cover;
+  object-position: center;
 }
 
 .content__video-card-description-container {
@@ -161,11 +163,16 @@ ol {
   margin-bottom: 6px;
   padding-top: 2px;
   padding-left: 2px;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
   padding-left: 2px;
   line-height: 90%;
+  min-width: 200px;
 }
 
 .search-form__fieldset-title {
@@ -182,6 +189,8 @@ ol {
 .search-form__label {
   display: flex;
   width: fit-content;
+  align-items: center;
+  cursor: pointer;
 }
 
 .search-form__fieldset-title + .search-form__label {
@@ -209,6 +218,7 @@ ol {
 }
 
 .button {
+  font-family: "Fira Sans Condensed", sans-serif;
   cursor: pointer;
   font-weight: 700;
   font-size: 18px;
@@ -222,6 +232,10 @@ ol {
   margin-top: 20px;
   width: 194px;
   height: 34px;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
 }
 
 .more-button {
@@ -233,7 +247,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   width: 19px;
   height: 19px;
   cursor: pointer;
@@ -250,7 +264,8 @@ label.search-form__label {
 }
 
 .search-form__label:has(:focus-visible) {
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
@@ -270,16 +285,21 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   background-color: #545050;
 }
 
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
 .search-form__checkbox-list .search-form__label:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.content__video-card:active {
+.content__card-link:active {
   background-color: #545050;
 }
 
-.content__video-card:hover {
+.content__card-link:hover {
   text-decoration: underline;
 }
 
